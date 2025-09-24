@@ -1,9 +1,9 @@
-Name: YOUR NAME HERE
+Name: David Lutch
 
-| Date    |  Time  |                                     Update |
-|:--------|:------:|-------------------------------------------:|
-| April 5 | 9-10pm | I tried to write abstract, efficient code. |
-|         |        |                                            |
+| Date    |       Time        |                                                                                                                                                                                                                                                                                                                                                                                                                   Update |
+|:--------|:-----------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Sept 24 | 11:00am - 12:00pm | Mr. Blick taught us that binary search isn't the most efficient way to solve this problem. I confirmed with Mr. Blick that I need to have an arraylist of all of the misspelled words and then convert it to a 1D string once I finish the problem. On top of that, I wrote a quick checker that only adds misspelled words into the misspelledWords arraylist if that misspelled word isn't currently in the arraylist. |
+|         |                   |                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
