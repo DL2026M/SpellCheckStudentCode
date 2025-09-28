@@ -22,14 +22,17 @@ public class SpellCheck {
     public String[] checkWords(String[] text, String[] dictionary) {
         ArrayList<String> misspelledWords = new ArrayList<String>();
         String currentWord = "";
-
         for (int i = 0; i < text.length; i++) {
+
+            // Call helper function here)
 
             // Only adds the first occurrence of a misspelled word
             if (!misspelledWords.contains(currentWord)) {
                 misspelledWords.add(currentWord);
             }
         }
+        // Helper function that checks to see if the word is valid
+
 
         // Converts the misspelled words from an array list to a string
         String[] misspelled = new String[misspelledWords.size()];
