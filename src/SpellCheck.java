@@ -21,37 +21,36 @@ public class SpellCheck {
      */
 
     // MIDDLE LETTER (THE MEDIAN OF THE WORDS IN THE DICTIONARY STARTS WITH L)
+
+
     public String[] checkWords(String[] text, String[] dictionary) {
         ArrayList<String> misspelledWords = new ArrayList<String>();
         String currentWord = "";
-        // Might be bigger if there are any sort of special characters
-        Node[] map = new Node['z'];
-        Node root = new Node(false, map);
-        // Filling the trie using the dictionary
+
+        Trie dictionaryWords = new Trie();
+        Trie misspelled = new Trie();
+
+        // For each word in the dictionary, insert it into the trie
         for (int i = 0; i < dictionary.length; i++) {
             currentWord = dictionary[i];
-
+            dictionaryWords.insert(currentWord);
         }
-
-
-
+        //For each word in text: If not in dictionary Trie and not in misspelled Trie, add to misspelled Trie
         for (int i = 0; i < text.length; i++) {
 
-            // Call helper function here)
-
+            currentWord = text[i];
             // Only adds the first occurrence of a misspelled word
-            if (!misspelledWords.contains(currentWord)) {
+            if (!dictionaryWords.lookup(currentWord) && !misspelled.lookup(currentWord)) {
+                misspelled.insert(currentWord);
                 misspelledWords.add(currentWord);
             }
         }
-        // Helper function that checks to see if the word is valid
-
 
         // Converts the misspelled words from an array list to a string
-        String[] misspelled = new String[misspelledWords.size()];
+        String[] misspelledArr = new String[misspelledWords.size()];
         for (int i = 0; i < misspelledWords.size(); i++) {
-            misspelled[i] = misspelledWords.get(i);
+            misspelledArr[i] = misspelledWords.get(i);
         }
-        return misspelled;
+        return misspelledArr;
     }
 }

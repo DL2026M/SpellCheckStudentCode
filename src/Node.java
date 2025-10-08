@@ -3,9 +3,9 @@ public class Node {
     private boolean isWord;
     private Node[] next;
 
-    public Node(boolean isWord,  Node[] next) {
-        this.isWord = isWord;
-        this.next = next;
+    public Node() {
+        this.isWord = false;
+        this.next = new Node[256];
     }
     public boolean isWord() {
         return isWord;

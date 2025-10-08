@@ -2,26 +2,39 @@ public class Trie {
     // Instance variable
     private Node root;
 
+    public Trie() {
+        this.root = new Node();
+    }
+
     public void insert(String word) {
         char firstLetter;
         Node[] next;
         Node currentNode = root;
-        for (int i = 0; i < word.length() - 1; i++) {
+        for (int i = 0; i < word.length(); i++) {
             firstLetter = word.charAt(i);
             next = currentNode.getNext();
-            next[firstLetter] = new Node(false, new Node['z']);
+            if (next[firstLetter] == null) {
+                next[firstLetter] = new Node();
+            }
             currentNode = next[firstLetter];
         }
         // Getting the last letter of the string
-        firstLetter = word.charAt(word.length() - 1);
-        next = currentNode.getNext();
-        next[firstLetter] = new Node(true, new Node['z']);
+        currentNode.setWord();
     }
+
     public boolean lookup(String word) {
-        if (word == null || word.length() == 0) {
-            return false;
+        Node currentNode = root;
+        int index;
+        for (int i = 0; i < word.length(); i++) {
+            index = word.charAt(i);
+            if (currentNode.getNext()[index] == null) {
+                return false;
+            }
+            else {
+                currentNode = currentNode.getNext()[index];
+            }
         }
-        return true;
+        return currentNode.isWord();
     }
 
 }
