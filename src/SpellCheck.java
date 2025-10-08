@@ -19,9 +19,22 @@ public class SpellCheck {
      * @param dictionary The list of all accepted words.
      * @return String[] of all mispelled words in the order they appear in text. No duplicates.
      */
+
+    // MIDDLE LETTER (THE MEDIAN OF THE WORDS IN THE DICTIONARY STARTS WITH L)
     public String[] checkWords(String[] text, String[] dictionary) {
         ArrayList<String> misspelledWords = new ArrayList<String>();
         String currentWord = "";
+        // Might be bigger if there are any sort of special characters
+        Node[] map = new Node['z'];
+        Node root = new Node(false, map);
+        // Filling the trie using the dictionary
+        for (int i = 0; i < dictionary.length; i++) {
+            currentWord = dictionary[i];
+
+        }
+
+
+
         for (int i = 0; i < text.length; i++) {
 
             // Call helper function here)
