@@ -11,24 +11,15 @@ import java.util.ArrayList;
 
 public class SpellCheck {
 
-
-    /**
-     * checkWords finds all words in text that are not present in dictionary
-     *
-     * @param text The list of all words in the text.
-     * @param dictionary The list of all accepted words.
-     * @return String[] of all mispelled words in the order they appear in text. No duplicates.
-     */
-
-    // MIDDLE LETTER (THE MEDIAN OF THE WORDS IN THE DICTIONARY STARTS WITH L)
-
-
     public String[] checkWords(String[] text, String[] dictionary) {
         ArrayList<String> misspelledWords = new ArrayList<String>();
         String currentWord = "";
 
-        Trie dictionaryWords = new Trie();
-        Trie misspelled = new Trie();
+
+        //Trie dictionaryWords = new Trie();
+        //Trie misspelled = new Trie();
+        TST dictionaryWords = new TST();
+        TST misspelled = new TST();
 
         // For each word in the dictionary, insert it into the trie
         for (int i = 0; i < dictionary.length; i++) {
@@ -37,7 +28,6 @@ public class SpellCheck {
         }
         //For each word in text: If not in dictionary Trie and not in misspelled Trie, add to misspelled Trie
         for (int i = 0; i < text.length; i++) {
-
             currentWord = text[i];
             // Only adds the first occurrence of a misspelled word
             if (!dictionaryWords.lookup(currentWord) && !misspelled.lookup(currentWord)) {

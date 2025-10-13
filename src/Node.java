@@ -5,6 +5,7 @@ public class Node {
 
     public Node() {
         this.isWord = false;
+        // Total characters in an extended ASCII is 256
         this.next = new Node[256];
     }
     public boolean isWord() {
