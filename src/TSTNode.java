@@ -11,7 +11,6 @@ public class TSTNode {
         this.letter = letter;
     }
 
-    // Getters
     public boolean getWord() {
         return isWord;
     }
@@ -31,7 +30,6 @@ public class TSTNode {
         return letter;
     }
 
-    // Setters
     public void setWord(boolean word) {
         isWord = word;
     }

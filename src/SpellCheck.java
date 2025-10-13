@@ -15,7 +15,6 @@ public class SpellCheck {
         ArrayList<String> misspelledWords = new ArrayList<String>();
         String currentWord = "";
 
-
         //Trie dictionaryWords = new Trie();
         //Trie misspelled = new Trie();
         TST dictionaryWords = new TST();

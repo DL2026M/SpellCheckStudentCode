@@ -1,12 +1,11 @@
 public class Trie {
     // Instance variable
-    private Node root;
+    private final Node root;
 
     public Trie() {
         this.root = new Node();
     }
 
-    // Inserts a word into the trie
     public void insert(String word) {
         char firstLetter;
         Node[] next;
@@ -35,6 +34,7 @@ public class Trie {
                 return false;
             }
             else {
+                // Updating current node
                 currentNode = currentNode.getNext()[index];
             }
         }

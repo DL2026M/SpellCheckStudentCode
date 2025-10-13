@@ -1,6 +1,6 @@
 public class TST {
     // Instance variable
-    private TSTNode root;
+    private final TSTNode root;
 
     public TST() {
         // Using l because the median word in the dictionary begins with l so half of the words will be to the right and
@@ -71,10 +71,13 @@ public class TST {
                 current = current.getRight();
             }
             else if (myLetter < TSTletter) {
+                // Moving down to the left
                 current = current.getLeft();
             }
             else {
+                // Moving to the next letter in the word
                 index++;
+                // // Checking to see if we are at the end of the potential word
                 if (word.length() == index) {
                     return current.getWord();
                 }
